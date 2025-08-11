@@ -202,6 +202,7 @@ Examples:
             for name, size in packages
         ]
         print(json.dumps(output, indent=2))
+        sys.exit(1)
     else:
         print_packages(packages, sort_by=args.sort, descending=args.desc, filter_str=args.filter, show_total=True)
 

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pip_list",
-    version="0.1.3",
+    version="0.1.4",
     description="List installed pip packages with their installed size, supports sorting and filtering.",
     author="Mayank Kumar Poddar",
     license="MIT",

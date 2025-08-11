@@ -1,4 +1,4 @@
-# pip_list
+# pip-list
 
 A fast and human-readable tool to list installed pip packages with their sizes, supporting sorting, filtering, and more.
 
@@ -34,7 +34,7 @@ pip-list [OPTIONS]
 - `--top N`             Show top N largest packages only
 - `--min-size MB`       Show packages larger than given size in MB
 - `--max-size MB`       Show packages lesser than given size in MB
-- `--json`              Export to json file
+- `--json`              Show packages in JSON format
 
 ### Examples
 
@@ -62,6 +62,12 @@ Show only packages larger than 5 MB:
 pip-list --min-size 5
 ```
 
+Show only packages lesser than 50 MB:
+
+```bash
+pip-list --max-size 50
+```
+
 Filter packages containing "numpy":
 
 ```bash
@@ -72,6 +78,12 @@ Sort by size descending:
 
 ```bash
 pip-list --sort size --desc
+```
+
+Show packages in JSON format:
+
+```bash
+pip-list --json
 ```
 
 ## License
