@@ -8,6 +8,7 @@ import os
 import sys
 import argparse
 import time
+import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 try:
@@ -165,7 +166,7 @@ Examples:
     parser.add_argument('--filter', type=str, help='Filter packages by name substring')
     parser.add_argument('--top', type=int, metavar='N', help='Show top N largest packages only')
     parser.add_argument('--min-size', type=float, metavar='MB', help='Show packages larger than given size in MB')
-    
+    parser.add_argument('--json', action='store_true', help='Output in JSON format (not implemented yet)')
 
     args = parser.parse_args()
 
@@ -187,6 +188,15 @@ Examples:
         packages.sort(key=lambda p: p[1], reverse=True)
         packages = packages[:args.top]
         print(f"Showing top {len(packages)} packages")
+    
+    if args.json:
+        output = [
+            {"package": name, "size_mb": size}
+            for name, size in packages
+        ]
+        print(json.dumps(output, indent=2))
+    else:
+        print_packages(packages, sort_by=args.sort, descending=args.desc, filter_str=args.filter, show_total=True)
 
     elapsed = time.time() - start
     print(f"Analysis done in {elapsed:.2f} seconds")
