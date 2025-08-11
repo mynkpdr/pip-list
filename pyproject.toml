@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pip-list"
+version = "0.1.4"
+description = "List installed pip packages with their installed size, supports sorting and filtering."
+readme = "README.md"
+requires-python = ">=3.6"
+keywords = ["pip", "list", "packages", "size", "cli"]
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[[project.authors]]
+name = "Mayank Kumar Poddar"
+email = "mayankpdr@gmail.com"
+
+[project.urls]
+Homepage = "https://github.com/mynkpdr/pip-list"
+
+[project.scripts]
+pip-list = "pip_list.cli:main"
