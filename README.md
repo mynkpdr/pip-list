@@ -11,6 +11,7 @@ A fast and human-readable tool to list installed pip packages with their sizes, 
 - Show only packages larger than a given size (in MB)
 - Displays total size and package count
 - Fast, uses multi-threading for speed
+- JSON output supported
 
 ## Installation
 
@@ -32,6 +33,8 @@ pip-list [OPTIONS]
 - `--filter TEXT`       Filter packages by name substring
 - `--top N`             Show top N largest packages only
 - `--min-size MB`       Show packages larger than given size in MB
+- `--max-size MB`       Show packages lesser than given size in MB
+- `--json`              Export to json file
 
 ### Examples
 

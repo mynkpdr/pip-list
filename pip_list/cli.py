@@ -166,6 +166,7 @@ Examples:
     parser.add_argument('--filter', type=str, help='Filter packages by name substring')
     parser.add_argument('--top', type=int, metavar='N', help='Show top N largest packages only')
     parser.add_argument('--min-size', type=float, metavar='MB', help='Show packages larger than given size in MB')
+    parser.add_argument('--max-size', type=float, metavar='MB', help='Show packages smaller than given size in MB')
     parser.add_argument('--json', action='store_true', help='Output in JSON format (not implemented yet)')
 
     args = parser.parse_args()
@@ -183,6 +184,12 @@ Examples:
         packages = [p for p in packages if p[1] >= args.min_size]
         if len(packages) < before:
             print(f"Filtered packages to >= {args.min_size} MB ({len(packages)}/{before})")
+    
+    if args.max_size:
+        before = len(packages)
+        packages = [p for p in packages if p[1] <= args.max_size]
+        if len(packages) < before:
+            print(f"Filtered packages to <= {args.max_size} MB ({len(packages)}/{before})")
 
     if args.top:
         packages.sort(key=lambda p: p[1], reverse=True)
