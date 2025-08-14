@@ -209,7 +209,6 @@ Examples:
     elapsed = time.time() - start
     print(f"Analysis done in {elapsed:.2f} seconds")
 
-    print_packages(packages, sort_by=args.sort, descending=args.desc, filter_str=args.filter, show_total=True)
 
 if __name__ == "__main__":
     main()

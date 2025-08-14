@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pip-list"
-version = "0.1.4"
+version = "0.1.5"
 description = "List installed pip packages with their installed size, supports sorting and filtering."
 readme = "README.md"
 requires-python = ">=3.6"
